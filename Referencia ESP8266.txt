@@ -1,5 +1,9 @@
 Referencia ESP8266
 
+Link do github para programa no Arduino IDE
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+
 Blog sobre ESP8266
 https://www.embarcados.com.br/modulo-esp8266/
 
@@ -7,6 +11,7 @@ https://www.embarcados.com.br/modulo-esp8266/
 Espressif Supote para a placa
 https://bbs.espressif.com/
 https://github.com/espressif
+https://www.espressif.com/en/products/hardware/esp8266ex/resources
 
 
 Biblioteca do Arduino para comunicar com ESP8266
