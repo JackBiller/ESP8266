@@ -4,6 +4,12 @@ Link do github para programa no Arduino IDE
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 
+Documentação do ESP8266 EP-12 no Arduino
+https://arduino-esp8266.readthedocs.io/en/2.4.0/reference.html
+https://arduino-esp8266.readthedocs.io/en/2.4.0/esp8266wifi/readme.html
+https://arduino-esp8266.readthedocs.io/en/2.4.0/esp8266wifi/scan-class.html
+
+
 Blog sobre ESP8266
 https://www.embarcados.com.br/modulo-esp8266/
 
@@ -24,3 +30,8 @@ https://github.com/aguegu/ardulibs
 
 Bilblioteca para o modulo HX711 (é nessesaria importa a biblioteca de simulação do Arduino (ardulibs))
 https://github.com/bogde/HX711
+
+
+
+Bibliotecas do Arduino
+https://github.com/arduino-libraries
