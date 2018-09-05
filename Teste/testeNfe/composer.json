@@ -1,0 +1,12 @@
+{
+    "name": "cdi/teste-nfe",
+    "authors": [
+        {
+            "name": "Jack Biller",
+            "email": "jackmailteste@gmail.com"
+        }
+    ],
+    "require": {
+    	"nfephp-org/sped-nfe" : "^5.0"
+    }
+}
