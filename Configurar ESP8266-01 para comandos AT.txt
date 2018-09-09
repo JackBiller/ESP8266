@@ -1,0 +1,20 @@
+Configurar ESP8266-01 para comandos AT
+
+Primeiro liga-lo no terminal e certificar de qual linguagem ele se cominica
+
+Se for LUA então quando enviar um comando AT ele vai dar erro;
+Porém se você enviar um comando em LUA ele tem que responder
+Por exmplo
+	Comando: 
+	$ print('teste')
+	Saida: 
+	$ teste
+
+Ultilize o programa Termite e configurei conforme as configuração do Gerenciador de Dispositivos a aréa de Configuração de Porta
+(Painel de Controle->Gerenciador de Dispositivos)
+Você precisa informar:
+	- A porta (EX: COM2)
+	- Velocidade (EX: 9600)
+	- Bits de dados (EX: 8)
+
+Após isso ter 

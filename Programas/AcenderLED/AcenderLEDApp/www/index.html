@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acender LED</title>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+
+
+	<table>
+		<tr>
+			<td colspan="2" id="statusLed">
+				<img src="DESLIGADO.png">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="ledComand(1)">
+					Acender
+				</button>
+			</td>
+			<td>
+				<button onclick="ledComand(0)">
+					Apagar
+				</button>
+			</td>
+		</tr>
+	</table>
+
+
+<script type="text/javascript">
+	function ledComand(param){
+		$.ajax({
+			url: "http://192.168.1.107",
+			type: "GET",
+			dataType: "text",
+			data: { 'led': param },
+			error: function(er){
+				console.log("Erro ao fazer requisição");
+			}
+		}).done(function(data){
+			// alert(data);
+			console.log(data);
+			try{
+				data = JSON.parse(data);
+				console.log(data.led);
+				// if(data.led == "LIGADO"){
+				$("#statusLed").html("<img src=\""+data.led+".png\">");
+				// }
+			} catch(error){
+				console.log("Não consegui converter retorno");
+			}
+		});
+	}
+</script>
+
+
+</body>
+</html>

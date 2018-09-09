@@ -1,0 +1,313 @@
+
+
+
+@font-face {
+	font-family: digital_font;
+	src: url(../font/DS-DIGI.TTF);
+}
+
+
+
+.botaoModalBalanca{
+	position: absolute;
+	margin-top: -19%;
+	font-size: 10px;
+	margin-left: -35%;
+}
+
+
+#tituloBase{
+	position: absolute;
+	margin-top: -18%;
+}
+
+
+#digitatorio {
+    -webkit-animation: cursor 1.5s infinite; /* Safari 4.0 - 8.0 */
+    animation: cursor 1.5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes cursor {
+    0%   {opacity: 1;}
+    50%  {opacity: 0.2;}
+    100% {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes cursor {
+    0%   {opacity: 1;}
+    50%  {opacity: 0.2;}
+    100% {opacity: 1;}
+}
+
+.teclado{
+	position: absolute;
+	width: 20%;
+	border-radius: 10px;
+	margin-top: -12%;
+	margin-left: 11%;
+}
+
+.tecladoTabela{
+	width: 100%;
+	font-family: digital_font;
+	font-size: 45px;
+	text-align: center;
+}
+
+.balancaInterface{
+	width: 80%;
+	height: 90%;
+	background-color: gray;
+	padding: 20px;
+	padding-left: 3%;
+	padding-right: 0%;
+	margin-top: 2%;
+	margin-left: 5%;
+	box-shadow: 10px 10px 10px #eee;
+}
+
+.balancaInterfaceInter{
+	/*width: 90%;*/
+	/*height: 20%;*/
+	/*margin-top: 5%;*/
+	/*margin-left: 5%;*/
+	background-color: white;
+	padding: 25%;
+	padding-left: 48%;
+	padding-right: 48%;
+
+}
+
+.display{
+	position: absolute;
+	/*background-color: blue;*/
+	background-color: #4848ff;
+	/*width: 350px;*/
+	/*height: 50px;*/
+	font-size: 45px;
+	padding: 1%;
+	padding-left: 2%;
+	padding-right: 2%;
+	margin: 20px;
+	border-radius: 5px;
+	font-family: digital_font;
+	color: white;
+}
+
+#display1{
+	margin-left: -35%;
+	margin-top: -12%;
+}
+
+#display2{
+	margin-left: -35%;
+	margin-top: 0%;
+}
+
+#display3{
+	margin-left: -10%;
+	margin-top: 0%;
+}
+
+
+.bordaBalaca{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+@media screen and (max-width: 1100px)  {
+	.display{
+		font-size: 35px;
+	}
+	.tecladoTabela{
+		font-size: 35px;
+	}
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+}
+
+@media screen and (max-width: 900px)  {
+	.display{
+		font-size: 30px;
+	}
+	.tecladoTabela{
+		font-size: 30px;
+	}
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+}
+
+@media screen and (max-width: 730px)  {
+
+	#tituloBase{
+		margin-top: -19%;
+		margin-left: -5%;
+		font-size: 25px;
+	}
+
+	.display{
+		font-size: 20px;
+	}
+	.tecladoTabela{
+		font-size: 20px;
+	}
+
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+}
+
+/* @media screen and (max-width: 520px)  {
+	.display{
+		font-size: 20px;
+	}
+	.tecladoTabela{
+		font-size: 20px;
+	}
+}*/
+
+/*@media screen and (max-width: 480px)  {*/
+@media screen and (max-width: 570px)  {
+
+	.balancaInterfaceInter{
+		background-color: white;
+		padding: 30%;
+		padding-left: 48%;
+		padding-right: 48%;
+	}
+
+	#tituloBase{
+		margin-top: -20%;
+		margin-left: -5%;
+		font-size: 25px;
+	}
+
+	.display{
+		font-size: 20px;
+	}
+	.tecladoTabela{
+		font-size: 20px;
+	}
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+
+	#display2{
+		margin-left: -35%;
+		margin-top: -2%;
+	}
+
+	#display3{
+		margin-left: -35%;
+		margin-top: 6%;
+	}
+}
+
+
+
+@media screen and (max-width: 500px)  {
+
+	.balancaInterfaceInter{
+		background-color: white;
+		padding: 30%;
+		padding-left: 48%;
+		padding-right: 48%;
+	}
+
+	#tituloBase{
+		margin-top: -20%;
+		margin-left: -5%;
+		font-size: 20px;
+	}
+
+	.display{
+		font-size: 15px;
+	}
+	.tecladoTabela{
+		font-size: 15px;
+	}
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+
+	#display2{
+		margin-left: -35%;
+		margin-top: -2%;
+	}
+
+	#display3{
+		margin-left: -35%;
+		margin-top: 6%;
+	}
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 430px)  {
+
+	.balancaInterfaceInter{
+		background-color: white;
+		padding: 45%;
+		padding-left: 48%;
+		padding-right: 48%;
+	}
+
+	#tituloBase{
+		margin-top: -25%;
+		margin-left: -5%;
+		font-size: 20px;
+	}
+
+	.botaoModalBalanca{
+		margin-top: -24%;
+		font-size: 10px;
+		margin-left: -35%;
+	}
+
+	.display{
+		font-size: 15px;
+	}
+
+	.tecladoTabela{
+		font-size: 15px;
+	}
+
+	.teclado{
+		margin-left: 3%;
+	}
+
+	#display1{
+		margin-left: -35%;
+		margin-top: -10%;
+	}
+
+	#display2{
+		margin-left: -35%;
+		margin-top: -2%;
+	}
+
+	#display3{
+		margin-left: -35%;
+		margin-top: 6%;
+	}
+}
