@@ -55,9 +55,9 @@ void loop(){
 			String webpage = "{\"led\":\"" + ds_led + "\"}";
 			// webpage += "</head><h1><u>ESP8266 - Web Server</u></h1><h2>";
 			// webpage += "Porta 13: esta com o LED ";
-			//int a = digitalRead(8);
+			// int a = digitalRead(8);
 			// webpage += ds_led;
-			//webpage += "<h2>Porta Digital 9: ";
+			// webpage += "<h2>Porta Digital 9: ";
 			// int b = digitalRead(9);
 			// webpage += b;
 			// webpage += "</h2>";
