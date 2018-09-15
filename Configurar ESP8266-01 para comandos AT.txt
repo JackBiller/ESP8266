@@ -17,4 +17,29 @@ Você precisa informar:
 	- Velocidade (EX: 9600)
 	- Bits de dados (EX: 8)
 
-Após isso ter 
+Após isso ter funcionado e você descobrir que o ESP está reconhecendo comandos em LUA vamos usar um outro programa
+chamado esp8266_flasher.exe
+
+Obs: pode ocorrer o erro do Windows Evente (5) acesso negado para corrigir isso:
+entre no menu iniciar digite no campo de busca UAC
+entre em: altera configuralçao de controle de conta de usuario
+na janela de Configurações de Controle de Conta de Usuario
+coloca a configuração no minimo possivel para: nunca notigicar
+clica em OK
+
+Após isso no programa esp8266_flasher.exe terá quatro campos:
+	- o primeiro com o botão "Bin" antes define o caminho do seu arquivo .bin com as configurações para comandos AT
+	nele que está especificado a verssão tambêm do firmware
+	- o segudo vem com um padrão "COM1" definido, é onde se define a porta em que o ESP está conectado
+	- o terceiro está definido com "0x00000" eu mantive o mesmo
+	- e o quarto campo mostra o status do que ele ta carrendo quando fizer o download
+Botões
+	- o botão Bin abre um navegador para buscar o arquivo .bin
+	- o botão Download carrega o firmware no ESP
+
+ele carrga até 99% e depois escreve Leaving... quebra uma linha e escriba mais uma outra coisa "Falied to leave Flash mode"
+quando ocorrer isso significa que já gravou o firmware no ESP
+depois disso deconte o GPIO0 do GND tira a alimentação e alimenta ele novamente nesta ordem e pronto seu ESP já esta pronto para receber comandos AT
+
+para testar isso entra na IDE do Arduino ou o próprio termite
+configura para tranmitir texto em CR-LF(Termite) ou Ambos, NL e CR(Arduino IDE)
