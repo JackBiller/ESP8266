@@ -1,0 +1,31 @@
+{
+	"name": "webpack-demo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"watch": "webpack -w",
+		"server": "node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"clean-webpack-plugin": "^0.1.19",
+		"css-loader": "^1.0.0",
+		"csv-loader": "^3.0.2",
+		"express": "^4.16.3",
+		"file-loader": "^2.0.0",
+		"html-webpack-plugin": "^3.2.0",
+		"style-loader": "^0.23.0",
+		"webpack": "^4.17.1",
+		"webpack-cli": "^3.1.0",
+		"webpack-dev-middleware": "^3.2.0",
+		"xml-loader": "^1.2.1"
+	},
+	"dependencies": {
+		"lodash": "^4.17.10"
+	}
+}
