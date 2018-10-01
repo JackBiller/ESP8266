@@ -58,9 +58,9 @@
 
 ## Imagens
 
-### Valor da Serial
+### Valor impresso na Serial
 
-<img src="Print Serial.png" width="50%">
+<img src="Print Serial.png" width="70%">
 <br><br>
 
 ### Gráfico Plotter
