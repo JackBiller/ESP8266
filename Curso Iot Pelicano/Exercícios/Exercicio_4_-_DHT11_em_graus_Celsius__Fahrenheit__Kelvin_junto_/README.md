@@ -54,3 +54,12 @@
 	  Serial.print(" ");                                                                // Próximo valor
 	  Serial.println((int)umidade);                                                     // Imprime o valor da umidade
 	}
+
+
+## Imagens
+
+<img src="grafico Plotter.png">
+<br><br>
+<img src="Print Serial.png">
+<br><br>
+<img src="montagem.jpeg">
