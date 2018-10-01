@@ -58,8 +58,16 @@
 
 ## Imagens
 
-<img src="grafico Plotter.png">
+### Valor da Serial
+
+<img src="Print Serial.png" width="50%">
 <br><br>
-<img src="Print Serial.png">
+
+### Gráfico Plotter
+
+<img src="grafico Plotter.png" width="50%">
 <br><br>
-<img src="montagem.jpeg">
+
+### Montagem Física
+
+<img src="montagem.jpeg" width="50%">
