@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='description' content='ApoenaIOT'>
+	<meta name='author' content='Lucas Apoena'>
+	<link href='https://rawgit.com/lucasapoena/apoenaIOT-slave/master/template/css/css.css' rel='stylesheet'>
+	<title>ApoenaIOT - Central Slave "+ versaoApp +"</title>
+</head>
+<body>
+	<div id='wrapper'>
+		<nav class='navbar navbar-default navbar-static-top' style='margin-bottom: 0'>
+			<div class='navbar-header'>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+					<span class='sr-only'>Menu</span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+				<a class='navbar-brand' href='dashboard.html'>ApoenaIOT - Central Slave</a>
+			</div>
+			<ul class='nav navbar-top-links navbar-right'>
+				<li>
+					<a href='#' accesskey='1'>
+						<i title='Ajustar Fonte' aria-hidden='true' class='fa fa-font fa-fw'></i>
+					</a>
+				</li>
+				<li>
+					<a href='#' accesskey='2'>
+						<i title='Ajustar Contraste' aria-hidden='true' class='fa fa-low-vision fa-fw'></i>
+					</a>
+				</li>
+				<li class='dropdown'>
+					<a aria-label= 'Informações gerais de desempenho da placa' class='dropdown-toggle' data-toggle='dropdown' href='#'>
+						<i title='Informações de desempenho' aria-hidden='true' class='fa fa-tasks fa-fw'></i>
+						<i aria-hidden='true' aria-hidden='true' class='fa fa-caret-down'></i>
+					</a>
+					<ul class='dropdown-menu dropdown-messages'>
+						<li>
+							<a href='#'>
+								<div>
+									<p>
+										<b>CPU</b>
+										<span class='pull-right text-muted'>40% Utilizado</span>
+									</p>
+									<div class='progress progress-striped active'>
+										<div title='Utilizando 40% da CPU' class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width: 40%'>
+											<span class='sr-only'>
+											</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class='divider'></li>
+						<li>
+							<a href='#'>
+								<div>
+									<p>
+										<b>Memoria</b>
+										<span class='pull-right text-muted'>80% Utilizado</span>
+									</p>
+									<div class='progress progress-striped active'>
+										<div title='Utilizando 80% da Memória' class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100' style='width: 80%'>
+											<span class='sr-only'></span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class='divider'></li>
+						<li>
+							<a href='#'>
+								<div>
+									<p>
+										<b>Armazenamento</b>
+										<span class='pull-right text-muted'>20% Utilizado</span>
+									</p>
+									<div class='progress progress-striped active'>
+										<div title='Utilizando 20% do Armazenamento' class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: 20%'>
+											<span class='sr-only'></span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class='navbar-default sidebar' role='navigation'>
+				<div class='sidebar-nav navbar-collapse'>
+					<ul class='nav' id='side-menu'>
+						<li>
+							<a href='dashboard.html' accesskey='3'>
+								<i aria-hidden='true' class='fa fa-dashboard fa-fw'></i> Dashboard
+							</a>
+						</li>
+						<li>
+							<a href='#'>
+								<i aria-hidden='true' class='fa fa-sitemap fa-fw'></i> Dispositivos<span class='fa arrow'></span>
+							</a>
+							<ul class='nav nav-second-level'>
+								<li>
+									<a href='iluminacao.html' accesskey='4'>
+										<i aria-hidden='true' class='fa fa-lightbulb-o' aria-hidden='true'></i> Iluminação
+									</a>
+								</li>
+								<li>
+									<a href='sensores.html' accesskey='5'>
+										<i aria-hidden='true' class='fa fa-bar-chart-o fa-fw'></i> Sensores
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href='#'>
+								<i aria-hidden='true' class='fa fa-wrench fa-fw'></i> Configurações<span class='fa arrow'></span>
+							</a>
+							<ul class='nav nav-second-level'>
+								<li>
+									<a href='restaurar_configuracao.html' accesskey='6'>Restaurar Configurações</a>
+								</li>
+								<li>
+									<a href='restart_equipamento.html' accesskey='7'>Reboot</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id='page-wrapper'>
+			<div class='container-fluid'>
+				<div class='row'>
+					<div class='col-lg-12'>
+						<h1 class='page-header'>"+tituloPagina+"</h1>
+					</div>
+				</div>
+				<div class='row'>"+conteudoHtml+"</div>
+			</div>
+		</div>
+	</div>
+	<script src='https://cdn.rawgit.com/lucasapoena/apoenaIOT-slave/master/template/js/js.js'></script>
+</body>
+</html>
+
+
+
+
+<div class='row'>
+	<div class='col-lg-3'>
+
+		<!-- Verifica se está ligado ou desligado a saida -->
+
+		<div class='panel panel-green'>
+			<div class='panel-heading'>
+				<i class='fa fa-bolt'></i> (Ligado) Lâmpada - Cod.: D"+String(i)+"
+			</div>
+			<div class='panel-body'>
+				<form action='iluminacao.html' method='POST'>
+					<button type='submit' name='button_"+String(i)+"' value='0' class='btn btn-danger btn-lg' >
+						<i class='fa fa-power-off'></i>
+						<br>
+						Desligar
+					</button>
+				</form>
+			</div>
+			<div class='panel-footer'>"+nomesDispositivos[i]+"</div>
+		</div>
+
+
+		<div class='panel panel-red'>
+			<div class='panel-heading'>
+				<i class='fa fa-power-off'></i> (Desligado) Lâmpada - Cod.: D"+String(i)+"
+			</div>
+			<div class='panel-body'>
+				<form action='iluminacao.html' method='POST'>
+					<button type='submit' name='button_"+String(i)+"' value='1' class='btn btn-success btn-lg'>
+						<i class='fa fa-bolt'></i>
+						<br>
+						Ligar
+					</button>
+				</form>
+			</div>
+			<div class='panel-footer'>"+nomesDispositivos[i]+"</div>
+		</div>
+
+
+	</div>
+</div>

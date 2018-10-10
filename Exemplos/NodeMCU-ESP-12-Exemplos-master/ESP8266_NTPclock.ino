@@ -16,21 +16,18 @@ WiFiUDP ntpUDP;
 // Definindo o Servidor de relogio NTP Brasil, ajusta relogio UTC -3 horas, intervalo de atualizacao em milisegundos
 NTPClient timeClient(ntpUDP, "gps.ntp.br", -3 * 3600, 60000);
 
-void setup()
-{
+void setup(){
   Serial.begin(115200);                     // print no Serial Monitor da IDE
   WiFi.begin(ssid, password);               // acessando a rede WIFI
 
-  while ( WiFi.status() != WL_CONNECTED )   // aguardando a conexão WEB
-  {
+  while ( WiFi.status() != WL_CONNECTED ){  // aguardando a conexão WEB
     delay ( 500 );                          // aguarda 0,5 segundos
     Serial.print ( "." );
   }
   timeClient.begin();
 }
 
-void loop()
-{
+void loop(){
   timeClient.update();                              // atualiza o relogio
   Serial.println(timeClient.getFormattedTime());    // print do relogio da WEB
   delay(1000);                                      // atraso de um segundo
