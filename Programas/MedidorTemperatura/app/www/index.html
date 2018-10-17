@@ -104,7 +104,7 @@
 		function consulta(){
 			conect = false;
 			$.ajax({
-				url: "http://" + $("#ipInput").val() + "/",
+				url: "http://" + $("#ipInput").val(), // + "/",
 				error: function(data){
 					$("#descErro").html("Sem Conexão");
 					$("#semConect").show(500);
