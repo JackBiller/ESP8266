@@ -85,7 +85,7 @@ void loop(){
   //Transição Fase 0 para Fase 1
   botao = analogRead(0);  //Leitura do valor da porta analógica A0
 
-  //ETAPA FASE 0 
+  //ETAPA FASE 00 
   printFase("Ajuste do Servo");
   ajusteServo('R'); // SERVO EM 90º (POSIÇÃO DELE RETO PARA IR PARA FRENTE)
 

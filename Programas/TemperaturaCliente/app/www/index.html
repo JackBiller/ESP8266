@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DHT11</title>
+	<meta charset="utf-8" />
+	<link rel='shortcut icon' href="img/icon.png" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+	<!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+	<script type="text/javascript" src="js/jQuery.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">      
+
+	
+	<!-- Scrips padrão -->
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/valorPorExtenco.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="js/bootbox.js"></script>
+	<script type="text/javascript" src="js/masked2.js"></script>
+	<script type="text/javascript" src="js/masked.js"></script>
+	<script type="text/javascript" src="js/toast.js"></script>
+	<script type="text/javascript" src="js/maskmoney.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+
+	<!-- Biblioteca dataList usando Jquery  -->
+	<link href="lb/jquery-flexdatalist/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css">
+	<script src="lb/jquery-flexdatalist/jquery.flexdatalist.min.js"></script>
+	<script src="js/jquery.maskMoney.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/toast.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<br><br>
+				<div class="text-center leganda">Temperatura</div>
+				<div class="displayDigital" id="temp">00ºC</div>
+			</div>
+			<div class="col-md-6">
+				<br><br>
+				<div class="text-center leganda">Umidade</div>
+				<div class="displayDigital" id="umid">00 %</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="conectButConfig">
+		<a href="#" type="button" class="" style="" data-toggle="modal" data-target="#myModal">
+			<i class="fa fa-gear"></i>
+		</a>
+	</div>
+
+
+	<div id="semConect">
+		<i class="fa fa-warning"></i> <span id="descErro">Sem Conexão</span>
+	</div>
+
+	<div id="desenvolvedor">
+		By: Jack Biller
+	</div>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Cofigurar IP</h4>
+				</div>
+				<div class="modal-body">
+					IP:
+					<input type="text" class="form-control" id="ipInput">
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success" onclick="configIp();">Definir</button>
+					<button class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script type="text/javascript">
+		var ip_Global = "";
+		if(localStorage.ip) 	ip_Global = localStorage.getItem("ip");
+		else 					localStorage.setItem("ip", "");
+		$("#ipInput").val(ip_Global);
+		
+		function configIp(){
+			var ip = $("#ipInput").val();
+			localStorage.setItem("ip", ip);
+			ip_Global = ip;
+		}
+
+
+		consulta();
+		var conect = true;
+		function consulta(){
+			conect = false;
+			$.ajax({
+				url: "http://" + $("#ipInput").val(), // + "/",
+				error: function(data){
+					$("#descErro").html("Sem Conexão");
+					$("#semConect").show(500);
+					setTimeout( function(){consulta()}, 2000);
+				},
+				timeout: '3000'
+			}).done(function(data){
+				conect = true;
+				console.log(data);
+				data = JSON.parse(data);
+				if (data.debug == "OK") {
+					$("#temp").html(data.temp + "ºC");
+					$("#umid").html(data.umid + " %");
+					$("#conteudo").html(data);
+					$("#semConect").hide(500);
+				} else {
+					$("#descErro").html(data.debug);
+					$("#semConect").show(500);
+				}
+				setTimeout( function(){consulta()}, 2000);
+			});
+			// setTimeout(function(){if(!conect){ $("#semConect").show(1000);consulta(); }}, 2500);
+		}
+	</script>
+	<style type="text/css">
+		@font-face {
+			font-family: digital;
+			src: url(font/digital-7.ttf);
+		}
+
+		body{
+			background-color: black;
+		}
+
+		.leganda{
+			font-size: 25px;
+			background-color: white;
+			border-radius: 10px;
+			font-family: "calibri";
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.displayDigital{
+			font-family: "digital";
+			font-size: 150px;
+			text-align: center;
+			background-color: gray;
+			color: red;
+			text-shadow: 5px 5px black;
+			border-style: solid;
+			border-size: 2;
+			border-color: white;
+			border-radius: 10px;
+		}
+
+		#semConect{
+			position: fixed;
+			top: 15px;
+			left: 15px;
+			padding: 25px;
+			background-color: tomato;
+			box-shadow: 10px 10px 10px lightgray;
+			border-radius: 10px;
+			font-size: 25px;
+			display: none;
+		}
+
+		#conectButConfig{
+			position: fixed;
+			top: 15px;
+			right: 15px;
+			font-size: 25px;
+			border-radius: 50px;
+			background-color: lightgray;
+			padding: 15px;
+		}
+		#conectButConfig a{
+			color: white;
+		}
+
+		#desenvolvedor{
+			position: fixed;
+			bottom: 0px;
+			background-color: white;
+			left: 0px;
+			border-top-right-radius: 10px;
+			padding: 10px;
+		}
+	</style>
+</body>
+</html>
+<!-- file:///C:/Users/Jack/Desktop/dht11.html -->
+<!-- file:///C:/Users/Jack/git/ESP8266/Programas/MedidorTemperatura/pagina/dht11.html -->
