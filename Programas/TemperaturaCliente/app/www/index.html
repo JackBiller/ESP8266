@@ -70,7 +70,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" id="btnFechaModal" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Cofigurar IP</h4>
 				</div>
 				<div class="modal-body">
@@ -78,6 +78,7 @@
 					<input type="text" class="form-control" id="ipInput">
 				</div>
 				<div class="modal-footer">
+					<button class="btn btn-primary" onclick='definirCaminho();'>Caminho Externo</button>
 					<button class="btn btn-success" onclick="configIp();">Definir</button>
 					<button class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
@@ -88,6 +89,7 @@
 	
 	<script type="text/javascript">
 		var ip_Global = "";
+		/* http://cdiinfo.com.br/admin/esp8266_dht11 */
 		if(localStorage.ip) 	ip_Global = localStorage.getItem("ip");
 		else 					localStorage.setItem("ip", "");
 		$("#ipInput").val(ip_Global);
@@ -96,6 +98,15 @@
 			var ip = $("#ipInput").val();
 			localStorage.setItem("ip", ip);
 			ip_Global = ip;
+			$("#btnFechaModal")[0].click();
+		}
+
+		function definirCaminho(){
+			var ip = "cdiinfo.com.br/admin/esp8266_dht11/controllers/controllerDht11.php?consulta=true";
+			localStorage.setItem("ip", ip);
+			ip_Global = ip;
+			$("#ipInput").val(ip);
+			setTimeout( function(){ $("#btnFechaModal")[0].click(); }, 500);
 		}
 
 
