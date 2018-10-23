@@ -19,7 +19,7 @@ B0001}, 200, 60, CW);
 
 //Define os parametros de ligacao do motor de passo lado direito  
 CustomStepper stepperD(31, 33, 35, 37, (byte[]){4, B1000, B0100, B0010, 
-B0001}, 200, 60, CW); 
+B0001}, 200, 60, CW);
 
 boolean avancando = false;
 boolean recuando = false;
@@ -50,6 +50,7 @@ int GAV_REC_ST = 0;                             //Status da chave de gaveta recu
 int faseAtual = 0;
 int referencia90 = 200;
 boolean fimPercurso = false;
+boolean autoConrrection = false;
 
 int anguloRetoServo = 90;
 int anguloLateralServo = 0;
@@ -144,9 +145,9 @@ void virar(char sentido, float multiplicador){
 
 void andar(int graus, String motorE, String motorD){
   stepperE.setDirection(motorE == "CW" ? CW : CCW);     // Define o sentido de rotacao
-  stepperE.rotateDegrees(graus);                        // Define o numero de rotacoes
+  stepperE.rotateDegrees(graus, autoConrrection);       // Define o numero de rotacoes
   stepperD.setDirection(motorD == "CW" ? CW : CCW);     // Define o sentido de rotacao
-  stepperD.rotateDegrees(graus);                        // Define o numero de rotacoes
+  stepperD.rotateDegrees(graus, autoConrrection);       // Define o numero de rotacoes
   delay(time_delay);
   carregando();
 }
@@ -159,8 +160,10 @@ void ajusteServo(char posicao){
 void carregando(){
   Serial.print("\nCarregando: ");
   while(!stepperE.isDone() || !stepperD.isDone()){
-    Serial.print("."); 
-    delay(50); 
+    // Serial.print("."); 
+    // delay(50);
+    stepperE.run();
+    stepperD.run();
   }
   Serial.println("\nPronto!");
 }
