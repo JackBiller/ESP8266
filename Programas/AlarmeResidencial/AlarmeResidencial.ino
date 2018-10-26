@@ -69,19 +69,10 @@ void loop() {
 		tone(buzzer,8000); 
 		Serial.println(acionamento);  
 	}
-
-	/*
-	int leitura = digitalRead(PIR);    																// delay 500ms para estabilizar sinal de leitura       
-	delay(500);
-	if (leitura == HIGH)     
-	// aciona relé
-	digitalWrite(rele_1, LOW);
-	*/
 	
 	// Look for new cards or Select one of the cards
 	if(!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial()) return;
-	//Mostra UID na serial
-	Serial.print("UID da tag: ");
+	Serial.print("UID da tag: ");																			// Mostra UID na serial
 	String conteudo = "";
 	
 	byte letra;
