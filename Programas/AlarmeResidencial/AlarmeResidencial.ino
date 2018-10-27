@@ -1,4 +1,4 @@
-// Programa : RFID - Controle de Acesso leitor RFID
+// Programa : Alarme Residencial
 // Autor : Jack Biller
 
 #include <SPI.h>
@@ -110,32 +110,11 @@ void loop() {
 	}
 	ativa_alarme();
 	///////////////////////////////////////////////////////////
-} 
-
-void mensageminicial(){
-	lcd.clear();
-	lcd.print(" Aproxime o seu");
-	lcd.setCursor(0,1);
-	lcd.print("cartao do leitor");
-}
-
-void ativa_alarme(){
-	String status = status_alarme == LOW ? "DESLIGADO" : "LIGADO";
-	Serial.print("ALARME ");
-	Serial.println(status)
-	lcd.clear();
-	lcd.setCursor(1,1);
-	lcd.print("ALARME ");
-	lcd.print(status);
-	lcd.print(" !");
-	delay(2000);
-	mensageminicial();
 }
 
 void botao_alarme(){
 	if (digitalRead(bt_aciona) == LOW && status_alarme == LOW;){
 		delay(2000); 																												// Tempo de ativação do alarnme
-		// Ativar o sensor de presença
 		status_alarme = HIGH;
 		armandoAlarme(5);																										// Manda o numero de vez que ele vai contar após da o primeiro pulso no botão
 	}
@@ -159,6 +138,26 @@ void armandoAlarme(int segundos){
 		delay(1000);
 		lcd.clear();
 	}
+}
+
+void mensageminicial(){
+	lcd.clear();
+	lcd.print(" Aproxime o seu");
+	lcd.setCursor(0,1);
+	lcd.print("cartao do leitor");
+}
+
+void ativa_alarme(){
+	String status = status_alarme == LOW ? "DESLIGADO" : "LIGADO";
+	Serial.print("ALARME ");
+	Serial.println(status)
+	lcd.clear();
+	lcd.setCursor(1,1);
+	lcd.print("ALARME ");
+	lcd.print(status);
+	lcd.print(" !");
+	delay(2000);
+	mensageminicial();
 }
 
 void destravaPorta(String nome){

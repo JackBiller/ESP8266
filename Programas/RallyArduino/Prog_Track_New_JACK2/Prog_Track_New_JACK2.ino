@@ -129,9 +129,7 @@ void loop(){
 
 
 void frente(float graus){
-  /*
-    -- Mandar a medida em cm e converter em graus --
-  */
+  /* -- Mandar a medida em cm e converter em graus -- */
   andar(graus, "CW", "CW");
 }
 
